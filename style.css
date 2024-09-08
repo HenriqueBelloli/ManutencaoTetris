@@ -1,57 +1,112 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('icons/textura.png');
+    /* Insira o caminho correto da imagem */
+    background-size: cover;
+    /* Faz a imagem cobrir todo o fundo */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
+    background-attachment: fixed;
+    /* Fixa a imagem no fundo ao rolar */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#game-container {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 17%;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 85%;
+    margin-right: 15%;
+}
+
 canvas {
-    display: block;
-    margin: auto;
-    border: 1px solid black;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(180deg, rgba(253, 76, 76, 1), rgba(246, 192, 97, 1), rgba(218, 246, 97, 1),
+            rgba(97, 246, 123, 1), rgba(97, 200, 246, 1), rgba(99, 79, 253, 1), rgba(214, 74, 255, 1)) border-box;
 }
 
 #playbutton {
-    width: 100px;
-    height: 50px;
-    display: block;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    background-color: white;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(180deg, rgba(253, 76, 76, 1), rgba(246, 192, 97, 1), rgba(218, 246, 97, 1),
+            rgba(97, 246, 123, 1)) border-box;
     cursor: pointer;
-    margin-top: 10px;
+    font-size: 16px;
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto 0;
-}
-#tutorialButton{
-    width: 150px;
-    height: 50px;
-    display: block;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    background-color: white;
+#tutorialButton {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(180deg,
+            rgba(97, 246, 123, 1), rgba(97, 200, 246, 1), rgba(99, 79, 253, 1), rgba(214, 74, 255, 1)) border-box;
     cursor: pointer;
-    margin-top: 10px;
-    margin-left: 20px;
+    font-size: 16px;
 }
+
+button:hover {
+    background-color: #444;
+}
+
+/*#backPieceCanvas {
+    background: #545355;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#backPiece {
+    position: absolute;
+    top: 5%;
+    left: 26%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}*/
 
 #tutorialMessage {
     display: none;
     position: absolute;
-    top: 37%; /* Ajuste este valor conforme necessário */
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 17px;
     font-family: Arial, sans-serif;
     color: white;
     background-color: #666464;
-    padding: 20px 40px; /* Ajuste o padding horizontal (20px) e vertical (40px) conforme necessário */
+    padding: 30px 50px;
     border-radius: 10px;
-    border: 2px solid #000000cc; /* Especifique a largura (2px) e a cor da borda (#800707cc) */
-    width: 300px; /* Ajuste a largura conforme necessário */
+    border: 2px solid #000000cc;
+    width: 250px;
+    height: 400px;
     opacity: 80%;
 }
-
 
 #closeButton {
     position: absolute;
@@ -63,24 +118,37 @@ canvas {
 }
 
 #closeButton:hover {
-    color: red; /* Altere a cor do "X" quando o mouse passar por cima */
+    color: red;
+    /* Altere a cor do "X" quando o mouse passar por cima */
 }
+
 #score-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+    position: absolute;
+    top: 70%;
+    left: 64%;
     font-family: Arial, sans-serif;
     font-size: 18px;
-    margin-left: 20px;
     font-weight: bold;
+    color: white;
+    display: grid;
+    gap: 10px;
 }
 
-#score {
-    margin-left: 5px;
-}
-
-#highscore {
-    margin-left: 5px;
+#highscoreContain,
+#scoreContain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 180px;
+    height: 15px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(90deg, rgba(253, 76, 76, 1), rgba(246, 192, 97, 1), rgba(218, 246, 97, 1),
+            rgba(97, 246, 123, 1), rgba(97, 200, 246, 1), rgba(99, 79, 253, 1), rgba(214, 74, 255, 1)) border-box;
 }
 
 #gameOverMessage {
@@ -117,16 +185,181 @@ canvas {
     cursor: pointer;
 }
 
-#nextPieceCanvas {
-    border: 1px solid black;
+#nextPieceCanvas1 {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(180deg, rgba(253, 76, 76, 1), rgba(246, 192, 97, 1), rgba(218, 246, 97, 1), rgba(97, 246, 123, 1)) border-box;
 }
 
-#nextPiece {
+#next-container {
+    margin-top: 5%;
+    left: 65%;
+}
+#nextPiece1 {
     position: absolute;
-    top: 5%;
-    left: 61%;
     text-align: center;
     font-family: Arial, sans-serif;
     font-size: 15px;
+    color: white;
     font-weight: bold;
+}
+
+#nextPieceCanvas2 {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background:
+        linear-gradient(#333, #333) padding-box,
+        linear-gradient(180deg, rgba(97, 246, 123, 1), rgba(97, 200, 246, 1), rgba(99, 79, 253, 1), rgba(214, 74, 255, 1)) border-box;
+}
+
+#nextPiece2 {
+    position: absolute;
+    top: 27%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+/* CSS Base existente para 1366x768 */
+
+/* Responsividade para telas maiores, como 1920x1080 */
+@media screen and (min-width: 1367px) {
+    #game-container {
+        margin-right: 20%;
+    }
+
+    #button-container {
+        margin-top: 70%;
+        margin-right: 10%;
+    }
+
+    #playbutton,
+    #tutorialButton {
+        width: 90px;
+        height: 90px;
+        font-size: 18px;
+    }
+
+    #score-container {
+        font-size: 20px;
+        top: 60%;
+        left: 60%;
+    }
+
+    #highscoreContain,
+    #scoreContain {
+        width: 220px;
+        height: 20px;
+    }
+
+    #next-container {
+        top: 10%;
+        left: 70%;
+    }
+
+    #nextPiece1,
+    #nextPiece2 {
+        font-size: 17px;
+    }
+
+    #nextPieceCanvas1,
+    #nextPieceCanvas2 {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Responsividade para tablets (resoluções intermediárias) */
+@media screen and (max-width: 1366px) {
+    #game-container {
+        margin-right: 15%;
+    }
+
+    #button-container {
+        margin-top: 90%;
+        margin-right: 15%;
+    }
+
+    #playbutton,
+    #tutorialButton {
+        width: 80px;
+        height: 80px;
+        font-size: 14px;
+    }
+
+    #score-container {
+        font-size: 16px;
+        top: 70%;
+        left: 65%;
+    }
+
+    #highscoreContain,
+    #scoreContain {
+        width: 160px;
+        height: 15px;
+    }
+
+    #nextPiece1,
+    #nextPiece2 {
+        font-size: 14px;
+        left: 65%;
+    }
+
+    #nextPieceCanvas1,
+    #nextPieceCanvas2 {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Responsividade para dispositivos móveis (resoluções menores) */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: contain;
+    }
+
+    #game-container {
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    #button-container {
+        margin-top: 90%;
+        margin-right: 0;
+        align-items: center;
+    }
+
+    #playbutton,
+    #tutorialButton {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
+    #score-container {
+        font-size: 14px;
+        top: 80%;
+        left: 55%;
+    }
+
+    #highscoreContain,
+    #scoreContain {
+        width: 140px;
+        height: 10px;
+    }
+
+    #nextPiece1,
+    #nextPiece2 {
+        font-size: 12px;
+    }
+
+    #nextPieceCanvas1,
+    #nextPieceCanvas2 {
+        width: 80px;
+        height: 80px;
+    }
 }

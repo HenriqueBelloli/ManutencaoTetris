@@ -1,0 +1,23 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules
+package-lock.json
+yarn.lock
+
+# Debug log from npm, yarn, and pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env*.local
+
+# IDE files
+.idea
+*.iml
+.vscode
